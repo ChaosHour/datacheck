@@ -8,6 +8,17 @@ data-check.py is a wrappper script for [data-diff](https://github.com/datafold/d
 
 I wrote this script to automate the process of comparing data between two databases and tables from multiple servers synchronously. I will come back to this script to add more features and make it more user-friendly. The goal is to be able to do this without using zsh or bash as a wrapper on top.
 
+
+## Requirements:
+
+Build the image first
+
+```bash
+docker build -t data-diff:latest -f Dockerfile.data-diff .
+```
+
+The python script starts the container to run data-diff.
+
 ## How to use this script? Usage
 
 ```python
@@ -97,8 +108,4 @@ docker run -it data-diff mysql://checkuser:xxxxx@mysql56-docker-primary-1:3306/d
 - 3611
 ```
 
-## How to build data-diff?
 
-```bash
-docker build -t data-diff:latest -f Dockerfile.data-diff .
-```
