@@ -89,7 +89,7 @@ mysqladmin proc -i1 | grep -i insert
 ## How to run data-diff against a single database and table?
 
 ```bash
-docker run -it data-diff mysql://checkuser:xxxxx@mysql56-docker-primary-1:3306/db1 my-table mysql://checkuser:xxxxx@mysql56-docker-replica-1:3306/db1 my-table
+docker run -it data-diff mysql://checkuser:xxxxx@mysql56-docker-primary-1:3306/db1 my-table1 mysql://checkuser:xxxxx@mysql56-docker-replica-1:3306/db2 my-table2
 
 - 3021
 - 3031
