@@ -1,8 +1,8 @@
 # datacheck
 
-## What is dat-check.py?
+## What is data-check.py?
 
-dat-check.py is a wrappper script for [data-diff](https://github.com/datafold/data-diff) to compare data between two databases and tables.
+data-check.py is a wrappper script for [data-diff](https://github.com/datafold/data-diff) to compare data between two databases and tables.
 
 ## Why did I write this script?
 
