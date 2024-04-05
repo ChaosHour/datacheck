@@ -1,19 +1,30 @@
 # datacheck
 
 ## What is dat-check.py?
-dat-check.py is a wrappper script for [data-diff](https://github.com/datafold/data-diff) to compare data between two databases and tables. 
+
+dat-check.py is a wrappper script for [data-diff](https://github.com/datafold/data-diff) to compare data between two databases and tables.
 
 ## Why did I write this script?
+
 I wrote this script to automate the process of comparing data between two databases and tables from multiple servers synchronously. I will come back to this script to add more features and make it more user-friendly. The goal is to be able to do this without using zsh or bash as a wrapper on top.
 
 ## How to use this script? Usage
+
 ```python
+
+This script will read from your ~/.my.cnf to get the user and password. You need configparser.
+Check the requirements.txt file.  
+
+I use pipenv and pyenv to manage my python environment. Others use Poetry or pip.
+
+
 ./data-check.py
 usage: data-check.py [-h] -s SOURCE_SERVER -d DEST_SERVER -db DEST_DB -t TABLE -k PRIMARY_KEY
 data-check.py: error: the following arguments are required: -s/--source_server, -d/--dest_server, -db/--dest_db, -t/--table, -k/--primary_key
 ```
 
 ## Example Usage
+
 ```bash
 typeset -A servers=(
     ["server1.com"]="db1"
@@ -75,8 +86,8 @@ In a second Terminal:
 mysqladmin proc -i1 | grep -i insert
 ```
 
-
 ## How to run data-diff against a single database and table?
+
 ```bash
 docker run -it data-diff mysql://checkuser:xxxxx@mysql56-docker-primary-1:3306/db1 my-table mysql://checkuser:xxxxx@mysql56-docker-replica-1:3306/db1 my-table
 
@@ -86,8 +97,8 @@ docker run -it data-diff mysql://checkuser:xxxxx@mysql56-docker-primary-1:3306/d
 - 3611
 ```
 
-
 ## How to build data-diff?
+
 ```bash
 docker build -t data-diff:latest -f Dockerfile.data-diff .
 ```
