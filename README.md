@@ -67,7 +67,7 @@ mysqldump --skip-opt --single-transaction -t -n --replace --hex-blob --quick --e
  
 
 
-Sync On QA Consolidated:
+Sync the data:
 for i in $(ls -1 *-2024-01*.sql); do db=$(echo $i | awk -F'-' '{print $(NF-3)}'); echo "Current file is ${i} and database ${db}"; cat ${i} | mysql ${db} ; sleep 1; done
 
 
