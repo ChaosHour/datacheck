@@ -12,7 +12,7 @@ I wrote this script to automate the process of comparing data between two databa
 ## Requirements:
 
 - Docker 
-- data-diff is included in docker image
+- data-diff is included in the docker image
 - Python 3.10 and above will work
 
 
