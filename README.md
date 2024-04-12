@@ -11,6 +11,11 @@ I wrote this script to automate the process of comparing data between two databa
 
 ## Requirements:
 
+- Docker 
+- data-diff
+- Python 3.10 and above will work
+
+
 Build the image first
 
 ```bash
