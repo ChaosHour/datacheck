@@ -114,3 +114,17 @@ docker run -it data-diff mysql://checkuser:xxxxx@mysql56-docker-primary-1:3306/d
 ```
 
 
+## Context to what the - or plus means in the data-diff output
+```bash
+Diff the given tables.
+
+Parameters
+table1 (TableSegment) – The “before” table to compare. Or: source table
+
+table2 (TableSegment) – The “after” table to compare. Or: target table
+
+Returns
+An iterator that yield pair-tuples, representing the diff. Items can be either - (‘-’, row) for items in table1 but not in table2. (‘+’, row) for items in table2 but not in table1. Where row is a tuple of values, corresponding to the diffed columns.
+```
+
+Link to [DOC](https://data-diff.readthedocs.io/en/latest/python-api.html#data_diff.diff_tables)
