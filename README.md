@@ -114,7 +114,7 @@ docker run -it data-diff mysql://checkuser:xxxxx@mysql56-docker-primary-1:3306/d
 ```
 
 
-## Context to what the - or plus means in the data-diff output
+## Context to what the - or + means in the data-diff output
 ```bash
 Diff the given tables.
 
