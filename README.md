@@ -105,16 +105,16 @@ mysqladmin proc -i1 | grep -i insert
 ## How to run data-diff against a single database and table?
 
 ```bash
-docker run -it data-diff mysql://checkuser:xxxxx@mysql56-docker-primary-1:3306/db1 my-table1 mysql://checkuser:xxxxx@mysql56-docker-replica-1:3306/db2 my-table2
-
-- 3021
-- 3031
-- 3041
-- 3611
+table="my-table"
+key="source_server"
+val="database"
+./data-check.py -s ${key} -d dest_server -db ${val} -t ${table} -k primary_key
+- 8296
 ```
 
 
 ## Context to what the - or + means in the data-diff output
+
 ```bash
 Diff the given tables.
 
