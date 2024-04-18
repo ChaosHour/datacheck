@@ -102,7 +102,7 @@ In a second Terminal:
 mysqladmin proc -i1 | grep -i insert
 ```
 
-## How to run data-diff against a single database and table?
+## How to run against a single database and table?
 
 ```bash
 table="my-table"
