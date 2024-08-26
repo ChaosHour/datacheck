@@ -134,7 +134,11 @@ Test Env is a moded version of [mysql56-docker](https://github.com/ChaosHour/mys
 
 
 
+<<<<<<< HEAD
 Using mysqk_random_data_load from Percona Labs to seed the table with data:
+=======
+Using mysql_random_data_load from Percona Labs to seed the table with data:
+>>>>>>> 743b7bb (Updated data-diff version in Dockerfile)
 
 [mysql_random_data_load](https://github.com/Percona-Lab/mysql_random_data_load) 
 

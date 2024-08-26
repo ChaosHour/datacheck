@@ -4,7 +4,11 @@ RUN apt-get update && apt-get install -y \
     python3-dev libpq-dev wget unzip \
     python3-setuptools gcc bc
 
+<<<<<<< HEAD
 #RUN pip install 'data-diff==0.7.14' 'data-diff[mysql]==0.7.14' -U
+=======
+
+>>>>>>> 743b7bb (Updated data-diff version in Dockerfile)
 RUN pip install 'data-diff==0.9.2' 'data-diff[mysql]==0.9.2' -U
 
 ENTRYPOINT ["data-diff"]
