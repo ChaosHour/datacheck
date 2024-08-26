@@ -35,7 +35,7 @@ if not (password.startswith("'") and password.endswith("'")):
 command = (
     f"docker run -it data-diff "
     f"mysql://{username}:{password}@{args.source_server}:3306/{args.dest_db} {args.table} "
-    f"mysql://{username}:{password}@{args.dest_server}:3307/{args.dest_db} {args.table} "
+    f"mysql://{username}:{password}@{args.dest_server}:3306/{args.dest_db} {args.table} "
     f"-k '{args.primary_key}'"
 )
 
