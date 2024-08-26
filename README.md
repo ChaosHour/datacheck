@@ -181,7 +181,7 @@ usage: data-check.py [-h] -s SOURCE_SERVER -d DEST_SERVER -db DEST_DB -t TABLE -
 data-check.py: error: the following arguments are required: -s/--source_server, -d/--dest_server, -db/--dest_db, -t/--table, -k/--primary_key
 ```
 
-[!Note]
-The default port used for the source and destination is :3306 Work to make that an argument will be done in a few days.
+
+**Note:** The default port used for the source and destination is :3306 Work to make that an argument will be done in a few days.
 
 Link to [DOC](https://data-diff.readthedocs.io/en/latest/python-api.html#data_diff.diff_tables)
