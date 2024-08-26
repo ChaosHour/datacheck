@@ -186,4 +186,10 @@ data-check.py: error: the following arguments are required: -s/--source_server, 
 ```
 
 
+
+[!NOTE] 
+Currently the ports that are used to connect to the source and destination are :3306 Changes to code to make them an argument to override them if needed will be implamented in the next few days.
+
+
+
 Link to [DOC](https://data-diff.readthedocs.io/en/latest/python-api.html#data_diff.diff_tables)
