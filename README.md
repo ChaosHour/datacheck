@@ -127,4 +127,59 @@ Returns
 An iterator that yield pair-tuples, representing the diff. Items can be either - (‘-’, row) for items in table1 but not in table2. (‘+’, row) for items in table2 but not in table1. Where row is a tuple of values, corresponding to the diffed columns.
 ```
 
+
+## Another Example:
+
+Test Env is a moded version of [mysql56-docker](https://github.com/ChaosHour/mysql56-docker)
+
+
+
+Using mysqk_random_data_load from Percona Labs to seed the table with data:
+
+[mysql_random_data_load](https://github.com/Percona-Lab/mysql_random_data_load) 
+
+```bash
+mysql_random_data_load chaos employees 300000 --host=192.168.x.x --user=root --password=xxxxx
+```
+
+Delete some records from the replica and run a checksum on it:
+
+```bash
+mysql --defaults-group-suffix=_primary1 -e "checksum table chaos.employees" & mysql --defaults-group-suffix=_replica1 -e "checksum table chaos.employees" &
+[1] 5198
+[2] 5199
++-----------------+------------+
+| Table           | Checksum   |
++-----------------+------------+
+| chaos.employees | 1612533927 |
++-----------------+------------+
+
+[1]  - done       mysql --defaults-group-suffix=_primary1 -e "checksum table chaos.employees"
++-----------------+------------+
+| Table           | Checksum   |
++-----------------+------------+
+| chaos.employees | 4062362216 |
++-----------------+------------+
+[2]  + done       mysql --defaults-group-suffix=_replica1 -e "checksum table chaos.employees"
+```
+
+
+## Now find the records using data-check:
+```bash
+schema="chaos"
+table="employees"
+source="192.168.50.75"
+dest="192.168.50.75"
+./data-check.py -s ${source} -d ${dest} -db ${schema} -t ${table} -k id -b 20 -th 4
+- 1
+- 31
+```
+
+```bash
+./data-check.py
+usage: data-check.py [-h] -s SOURCE_SERVER -d DEST_SERVER -db DEST_DB -t TABLE -k PRIMARY_KEY [-b BISECTION_FACTOR] [-th THREADS]
+data-check.py: error: the following arguments are required: -s/--source_server, -d/--dest_server, -db/--dest_db, -t/--table, -k/--primary_key
+```
+
+
 Link to [DOC](https://data-diff.readthedocs.io/en/latest/python-api.html#data_diff.diff_tables)
