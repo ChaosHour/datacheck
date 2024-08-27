@@ -21,10 +21,10 @@ args = parser.parse_args()
 # Read the username and password from the ~/.my.cnf file
 config = configparser.ConfigParser()
 config.read(os.path.expanduser('~/.my.cnf'))
-#username = config['client']['user']
-#password = config['client']['password']
-username = config['client_primary1']['user']
-password = config['client_primary1']['password']
+username = config['client']['user']
+password = config['client']['password']
+#username = config['client_primary1']['user']
+#password = config['client_primary1']['password']
 
 # Check if the password is enclosed in single quotes
 if not (password.startswith("'") and password.endswith("'")):
